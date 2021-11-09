@@ -1,0 +1,380 @@
+#wrapper {
+	background: url(../img/animation-loading.gif) no-repeat fixed center center #FFF;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+body#login {
+	background: rgb(134, 151, 82);
+}
+
+.login-container {
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: calc(50% - 240px);
+	left: calc(50% - 160px);
+}
+
+form.signUp,
+form.signIn {
+	position: absolute;
+	text-align: center;
+	background: #fff;
+	border-radius: 5px;
+	padding: 30px 20px 0 20px;
+	box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+}
+
+form.signUp {
+	width: 400px;
+	height: 750px;
+}
+
+form.signIn {
+	width: 400px;
+	height: 470px;
+}
+
+.text {
+	font-size: 35px;
+	text-transform: uppercase;
+	/* color: #87613d; */
+	color: rgb(34, 46, 88);
+	margin-bottom: 30px;
+}
+
+button.form-btn {
+	position: absolute;
+	width: 50%;
+	height: 60px;
+	bottom: 0;
+	border: 0;
+	font-family: 'Dosis';
+	font-size: 24px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+button.form-btn.sx {
+	left: 0;
+	border-radius: 0 0 0 5px;
+	background-color: rgba(34, 46, 88, 0.35);
+	color: #fff;
+	transition: all 0.3s linear;
+}
+
+button.form-btn.sx:hover {
+	background-color: rgba(34, 46, 88, 0.65);
+	color: #fff;
+}
+
+button.form-btn.sx.back {
+	background-color: rgba(0, 0, 0, 0.15);
+	transition: all 0.3s linear;
+}
+
+button.form-btn.sx.back:hover {
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+button.form-btn.dx {
+	right: 0;
+	border-radius: 0 0 5px 0;
+	background-color: rgb(147, 186, 33);
+	color: #fff;
+}
+
+.signIn {
+	z-index: 2;
+	
+}
+
+.signUp {
+	z-index: 1;
+	transform: perspective(100px) translate3d(100px, 0px, -30px);
+	opacity: 0.5;
+}
+
+.active-dx {
+	animation-name: foregrounding-dx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.active-sx {
+	animation-name: foregrounding-sx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.inactive-dx {
+	animation-name: overshadowing-dx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.inactive-sx {
+	animation-name: overshadowing-sx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes overshadowing-dx {
+	0% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+		box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	}
+	100% {
+		z-index: 1;
+		transform: perspective(100px) translate3d(100px, 0px, -30px);
+		opacity: 0.5;
+		box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+@keyframes overshadowing-sx {
+	0% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+		box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	}
+	100% {
+		z-index: 1;
+		transform: perspective(100px) translate3d(-100px, 0px, -30px);
+		opacity: 0.5;
+		box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+@keyframes foregrounding-dx {
+	0% {
+		z-index: 1;
+		transform: perspective(100px) translate3d(100px, 0px, -30px);
+		opacity: 0.5;
+	}
+	50% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(400px, 0px, -30px);
+	}
+	100% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+	}
+}
+
+@keyframes foregrounding-sx {
+	0% {
+		z-index: 1;
+		transform: perspective(100px) translate3d(-100px, 0px, -30px);
+		opacity: 0.5;
+	}
+	50% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(-400px, 0px, -30px);
+	}
+	100% {
+		z-index: 2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+	}
+}
+
+/* .fa {
+	font-size: 1.45rem;
+} */
+
+i.fa{
+	font-size: 1.15rem;
+}
+
+.bg-darkblue {
+	background-color: rgba(34, 46, 88, 1);
+}
+
+.bg-darkblue>a {
+	color: white;
+}
+
+a.nav-link {
+	color: #fff;
+}
+
+a.header {
+	color: black;
+}
+
+.nav-item.is_active {
+	border-right: 4px solid rgb(147, 186, 33);
+	background: rgb(34, 46, 88);
+	color: #fff !important;
+	transition: 0.5s all ease-in;
+}
+
+.is_active:first-child{
+	color: white !important;
+}
+
+a.header.active{
+	color:white;
+}
+
+#user_info {
+	background-color: rgba(34, 46, 88, 1);
+	box-shadow: 0 3px 3px 0;
+	margin-top: 30px;
+	color: #fff;
+}
+
+.professor_picture {
+	float: left;
+	padding: 40px;
+}
+
+.professor_text{
+	margin-top: 85px;
+
+}
+
+.avatar-image {
+	border-radius: 50%;
+	height: 132px;
+	width: 132px;
+	border: 2px solid rgb(147, 186, 33);
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.professor_stats {
+    padding: 16px;
+    float: right;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 550px;
+}
+
+.arrange {
+	box-sizing: border-box;
+	display: table;
+	margin: 0;
+	min-width: 100%;
+	padding: 0
+}
+
+.arrange-equal {
+	table-layout: fixed;
+	width: 100%;
+}
+
+
+.arrange-bottom .arrange-sizeFill,
+.arrange-sizefit {
+	vertical-align: bottom;
+}
+
+.arrange-equal>.arrange-sizeFill,
+.arrange-equal>.arrange-sizefit {
+	width: 1%;
+}
+
+.arrange-sizeFill,
+.arrange-sizeFit {
+	display: table-cell;
+	padding: 0;
+	vertical-align: top;
+}
+
+.professor_stat {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 1;
+	overflow: hidden;
+	transition: all .15s ease-in-out;
+}
+
+.u-textUserColor,
+.u-textUserColorHover:hover,
+.u-textUserColorHover:hover .ProfileTweet-actionCount,
+.u-textUserColorHover:focus {
+	color: #1DA1F2 !important;
+}
+
+.u-linkClean,
+.u-linkClean:hover,
+.u-linkClean:focus,
+.u-linkClean:active {
+	text-decoration: none !important;
+}
+
+.professor_statLabel {
+	color: rgb(147, 186, 33);
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: .02em;
+	line-height: 16px;
+	overflow: hidden;
+	transition: color .15s ease-in-out;
+}
+
+.professor_statValue {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 3px;
+	transition: color .15s ease-in-out;
+	margin-left: 20px;
+}
+
+.u-block {
+	display: block !important;
+}
+
+#area {
+    height: 120px;
+    margin-top: 80px;
+}
+
+.nav-link:focus, .nav-link:hover {
+    text-decoration: none;
+    box-shadow: 2px 2px 2px rgb(147, 186, 33);
+}
+
+button.btn{
+	border-radius: unset;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 65%;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: unset;
+}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
